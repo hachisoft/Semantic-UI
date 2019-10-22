@@ -21,7 +21,7 @@
 @closeDistance: 0.25rem;
 @closeHitBoxOffset: (@closeHitbox - 1rem) / 2;
 @closePadding: @closeHitBoxOffset 0rem 0rem 0rem;
-@closeTop: -(@closeDistance + @closeHitbox);
+@closeTop: -1rem;
 @closeRight: -(@closeDistance + @closeHitbox);
 
 /* Header */
