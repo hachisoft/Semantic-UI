@@ -371,6 +371,13 @@ $.fn.modal = function(parameters) {
                     duration    : settings.duration,
                     useFailSafe : true,
                     onComplete : function() {
+                      var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+                      if (isChrome) { // Chrome
+                          element.scrollIntoViewIfNeeded();
+                      } else {
+                          var inlineCenter = { behavior: 'smooth', block: 'center', inline: 'start' };
+                          element.scrollIntoView(inlineCenter);
+                      }
                       settings.onVisible.apply(element);
                       if(settings.keyboardShortcuts) {
                         module.add.keyboardShortcuts();
